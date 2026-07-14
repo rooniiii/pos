@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
+            $table->decimal('sub_total', 10, 2)->default(0);
+            $table->decimal('discount_percentage', 5, 2)->default(0);
+            $table->decimal('grand_total',10,2);
+            $table->foreignId('customer_id');
+            
             $table->timestamps();
         });
     }

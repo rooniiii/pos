@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sale_items', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+       Schema::create('sale_items', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('sale_id')->constrained();
+    $table->foreignId('product_id')->constrained();
+    $table->integer('quantity');
+    $table->decimal('price', 10, 2);
+    $table->decimal('total', 10, 2);
+    $table->timestamps();
+});
     }
 
     /**

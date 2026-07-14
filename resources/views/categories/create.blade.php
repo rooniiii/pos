@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
-
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="container">
-            <form action="{{ route('categories.store') }}" method="post">
+            <form action="{{ route('categories.store') }}" method="post" class="form">
                 @csrf
 
                 <div class="mb-3">
@@ -36,4 +36,19 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
+     
+
+<script>
+    $(document).ready(function () {
+    console.log("JS loaded");
+
+    $(".form").submit(function (e) {
+        console.log("submit fired");
+
+        if (!confirm("Are you sure?")) {
+            e.preventDefault();
+        }
+    });
+});
+</script>
 </body>
