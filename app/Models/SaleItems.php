@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class SaleItems extends Model
 {
+      protected $fillable = [
+        'sale_id',
+        'product_id',
+        'quantity',
+        'price',
+        'total'
+    ];
     public function sale()
 {
     return $this->belongsTo(Sales::class, 'sale_id');
@@ -16,13 +23,5 @@ public function product()
     return $this->belongsTo(Product::class, 'product_id');
 }
 
-
-
-    protected $fillable = [
-        'sale_id',
-        'product_id',
-        'quantity',
-        'price',
-        'total'
-    ];
+  
 }
