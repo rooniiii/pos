@@ -22,4 +22,4 @@ Route::get('/sales/{id}/pdf', [SalesController::class, 'pdf'])
 Route::get('/sales/{id}/send-email', [SalesController::class, 'sendEmail'])
     ->name('sales.sendEmail');
 
-    //Test branch protection
+    
