@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sales extends Model
 {
+      protected $fillable = [
+        'sub_total',
+
+        'discount_percentage',
+        'customer_id',
+        'grand_total'
+        
+
+    ];
     public function customer()
 {
     return $this->belongsTo(Customer::class);
@@ -16,13 +25,4 @@ class Sales extends Model
 }
 
 
-    protected $fillable = [
-        'sub_total',
-
-        'discount_percentage',
-        'customer_id',
-        'grand_total'
-        
-
-    ];
 }
